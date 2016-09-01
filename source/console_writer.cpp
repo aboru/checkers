@@ -14,17 +14,36 @@
     limitations under the License.
 */
 
-#include "config.hpp"
+#include <iostream>
+#include <string>
 #include "writer.hpp"
 
-ConsoleWriter out;
+void ConsoleWriter::write(int value)
+{
+    this->write(std::to_string(value));
+}
 
-int main() {
-    out.write(VERSION_MAJOR);
-    out.write(".");
-    out.write(VERSION_MINOR);
-    out.write(".");
-    out.writeLine(VERSION_PATCH);
+void ConsoleWriter::writeLine(int value) {
+    this->writeLine(std::to_string(value));
+}
 
-	return 0;
+void ConsoleWriter::write(std::string message)
+{
+    std::cout << message;
+}
+
+void ConsoleWriter::writeLine(std::string message)
+{
+    this->write(message);
+    this->write("\n");
+}
+
+void ConsoleWriter::flush()
+{
+    std::cout.flush();
+}
+
+void ConsoleWriter::close()
+{
+    // does not close standard out.
 }

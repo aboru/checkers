@@ -14,17 +14,31 @@
     limitations under the License.
 */
 
-#include "config.hpp"
-#include "writer.hpp"
+#ifndef CHECKERS_WRITER_HPP
+#define CHECKERS_WRITER_HPP
 
-ConsoleWriter out;
+#include <string>
 
-int main() {
-    out.write(VERSION_MAJOR);
-    out.write(".");
-    out.write(VERSION_MINOR);
-    out.write(".");
-    out.writeLine(VERSION_PATCH);
+class Writer
+{
+  public:
+    virtual void write(int)     = 0;
+    virtual void writeLine(int) = 0;
+    virtual void write(std::string message)     = 0;
+    virtual void writeLine(std::string message) = 0;
+    virtual void flush() = 0;
+    virtual void close() = 0;
+};
 
-	return 0;
-}
+class ConsoleWriter : public Writer
+{
+  public:
+    void write(int);
+    void writeLine(int);
+    void write(std::string message);
+    void writeLine(std::string message);
+    void flush();
+    void close();
+};
+
+#endif
