@@ -14,20 +14,29 @@
     limitations under the License.
 */
 
-#include "writer.hpp"
-#include "board.hpp"
+#ifndef CHECKERS_BOARD_HPP
+#define CHECKERS_BOARD_HPP
 
-ConsoleWriter out;
+#include <string>
 
-int main() {
-    Board board;
-    bool isPlayerOne = false;
+class BoardNode {
+  public:
+    int getOwner();
+    void setOwner(int);
 
-    while (!board.shouldEnd()) {
-        isPlayerOne = !isPlayerOne;
-        out.write(board.toString());
-        out.writeLine(isPlayerOne ? "player one" : "player two");
-    }
+  private:
+    int owner;
+};
 
-	return 0;
-}
+class Board {
+  public:
+    Board();
+    BoardNode get(int, int);
+    std::string toString();
+    bool shouldEnd();
+
+  private:
+    BoardNode nodes[8][8];
+};
+
+#endif
