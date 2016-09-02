@@ -14,20 +14,11 @@
     limitations under the License.
 */
 
-#include "writer.hpp"
-#include "board.hpp"
+#include <iostream>
+#include <cstdlib>
 
-ConsoleWriter out;
-
-int main() {
-    Board board;
-    bool isPlayerOne = false;
-
-    while (!board.shouldEnd()) {
-        isPlayerOne = !isPlayerOne;
-        out.write(board.toString());
-        out.writeLine(isPlayerOne ? "player one" : "player two");
-    }
-
-	return 0;
+int
+main(int argument_count, char** arguments) {
+  std::cout << "Hello, Checkers!" << std::endl;
+  return EXIT_SUCCESS;
 }
