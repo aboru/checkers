@@ -4,6 +4,7 @@ project (checkers)
 
 set (CMAKE_CXX_STANDARD 14)
 set (CMAKE_CXX_STANDARD_REQUIRED ON)
+set (CMAKE_CXX_FLAGS "-g -Wall -Wextra")
 
 set (CHECKERS_VERSION_MAJOR 0)
 set (CHECKERS_VERSION_MINOR 0)
@@ -27,8 +28,6 @@ list (FILTER TESTS EXCLUDE REGEX ".*checkers.cpp$")
 
 add_executable (checkers ${SOURCES})
 add_subdirectory ("${PROJECT_SOURCE_DIR}/external/catch")
-
-message(${CATCH_INCLUDE_DIR})
 
 enable_testing (true)
 add_executable (checkers_test ${TESTS})

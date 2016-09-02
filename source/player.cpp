@@ -14,14 +14,32 @@
     limitations under the License.
 */
 
-#include <iostream>
-#include <cstdlib>
+#include "player.hpp"
 
-// temporary add until decisions are made for command line
-#pragma clang diagnostic ignored "-Wunused-parameter"
+using namespace checkers;
 
-int
-main(int argument_count, char** arguments) {
-  std::cout << "Hello, Checkers!" << std::endl;
-  return EXIT_SUCCESS;
+std::string
+player::name() {
+  return this->_name;
+}
+
+std::string
+player::nickname() {
+  if (!this->_name.empty()) {
+    return this->_name;
+  }
+  if (this->_id == 1) {
+    return "player one";
+  }
+  
+  if (this->_id == 2) {
+    return "player two";
+  }
+
+  return "invalid player";
+}
+
+void
+player::name(std::string name) {
+  this->_name = name;
 }

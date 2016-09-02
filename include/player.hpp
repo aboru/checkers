@@ -14,14 +14,26 @@
     limitations under the License.
 */
 
-#include <iostream>
-#include <cstdlib>
+#ifndef L_CHECKERS_PLAYER_HPP
+#define L_CHECKERS_PLAYER_HPP
 
-// temporary add until decisions are made for command line
-#pragma clang diagnostic ignored "-Wunused-parameter"
+#include <string>
 
-int
-main(int argument_count, char** arguments) {
-  std::cout << "Hello, Checkers!" << std::endl;
-  return EXIT_SUCCESS;
+namespace checkers {
+  class player {
+    int _id;
+    std::string _name;
+    
+  public:
+    player(int id): _id(id) {
+      // empty body because *reasons*
+    }
+
+    std::string name();
+    std::string nickname();
+
+    void name(std::string);
+  };
 }
+
+#endif
