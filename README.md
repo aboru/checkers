@@ -4,7 +4,8 @@ A custom game of checkers.
 
 ### Dependencies
 
-* [https://github.com/philsquared/Catch](catch) - a c++ unit testing framework
+* Glew
+* GLFW
+* GLM
 
-Catch is included by means of a CMake import of the git repository, it requires git
-to be located somewhere that CMake can find it. 
+> Catch is included via CMake import for unit tests.

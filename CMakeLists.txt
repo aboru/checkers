@@ -24,13 +24,16 @@ file (GLOB_RECURSE SOURCES "${PROJECT_SOURCE_DIR}/source/*.cpp")
 file (GLOB_RECURSE TESTS   "${PROJECT_SOURCE_DIR}/test/*.cpp")
 
 set (TESTS ${TESTS} ${SOURCES})
-list (FILTER TESTS EXCLUDE REGEX ".*checkers.cpp$")
+list (FILTER TESTS EXCLUDE REGEX ".*main.cpp$")
 
 add_executable (checkers ${SOURCES})
+target_link_libraries(checkers GL GLU GLEW glfw)
+
 add_subdirectory ("${PROJECT_SOURCE_DIR}/external/catch")
 
 enable_testing (true)
 add_executable (checkers_test ${TESTS})
+target_link_libraries(checkers_test GL GLU GLEW glfw)
 add_dependencies(checkers_test catch)
 include_directories(${CATCH_INCLUDE_DIR} include)
 add_test (NAME test_suite COMMAND checkers_test)
