@@ -26,6 +26,9 @@ file (GLOB_RECURSE TESTS   "${PROJECT_SOURCE_DIR}/test/*.cpp")
 set (TESTS ${TESTS} ${SOURCES})
 list (FILTER TESTS EXCLUDE REGEX ".*main.cpp$")
 
+list (FILTER TESTS EXCLUDE REGEX ".*(~|#)+.*")
+list (FILTER SOURCES EXCLUDE REGEX ".*(~|#)+.*")
+
 add_executable (checkers ${SOURCES})
 target_link_libraries(checkers GL GLU GLEW glfw)
 
