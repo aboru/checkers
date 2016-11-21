@@ -4,7 +4,7 @@ project (checkers)
 
 set (CMAKE_CXX_STANDARD 14)
 set (CMAKE_CXX_STANDARD_REQUIRED ON)
-set (CMAKE_CXX_FLAGS "-g -Wall -Wextra")
+set (CMAKE_CXX_FLAGS "-g -Wall -Wextra -m64")
 
 set (CHECKERS_VERSION_MAJOR 0)
 set (CHECKERS_VERSION_MINOR 0)
@@ -30,13 +30,13 @@ list (FILTER TESTS EXCLUDE REGEX ".*(~|#)+.*")
 list (FILTER SOURCES EXCLUDE REGEX ".*(~|#)+.*")
 
 add_executable (checkers ${SOURCES})
-target_link_libraries(checkers GL GLU GLEW glfw)
+target_link_libraries(checkers GL GLU GLEW glfw SOIL)
 
 add_subdirectory ("${PROJECT_SOURCE_DIR}/external/catch")
 
 enable_testing (true)
 add_executable (checkers_test ${TESTS})
-target_link_libraries(checkers_test GL GLU GLEW glfw)
+target_link_libraries(checkers_test GL GLU GLEW glfw SOIL)
 add_dependencies(checkers_test catch)
 include_directories(${CATCH_INCLUDE_DIR} include)
 add_test (NAME test_suite COMMAND checkers_test)
