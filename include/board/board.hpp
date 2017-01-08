@@ -14,14 +14,17 @@
     limitations under the License.
 */
 
-#include <cstdlib>
-#include <iostream>
-#include "board/board.hpp"
+#include <string>
 
-int main( int argument_count, char** arguments ) {
-    board board;
+class board {
+private:
+    int state[8][8];
+public:
+    board();
 
-    std::cout << board.to_string() << std::endl;
+    int width();
+    int height();
+    int at(int, int);
 
-    return EXIT_SUCCESS;
-}
+    std::string to_string();
+};
