@@ -27,3 +27,9 @@ pending features:
 * player movement
 * win checks
 * game ending
+
+### Compatibility
+
+This game is designed on and for Arch Linux, other flavors of linux will probably
+work but are not explicitly tested at this point. OSX and Windows are unsupported
+and changes would be needed to make them work.
