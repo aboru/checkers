@@ -47,3 +47,17 @@ and changes would be needed to make them work.
 * [Catch](https://github.com/philsquared/Catch) - bundled
 
 #### Run
+
+### How To Run
+
+To run the project, run the following commands in a terminal window from the
+root directory:
+
+> $ cmake  
+> $ make test // to run unit tests  
+> $ ./checkers
+
+### How To Contribute
+
+To contribute to the project, please make a pull request and these will be 
+evaluated on a case by case basis.
