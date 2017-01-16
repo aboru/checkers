@@ -33,3 +33,17 @@ pending features:
 This game is designed on and for Arch Linux, other flavors of linux will probably
 work but are not explicitly tested at this point. OSX and Windows are unsupported
 and changes would be needed to make them work.
+
+### Dependencies
+
+#### Build
+
+* G++ or Clang++ (for compilation)
+* CMake
+* make
+
+#### Testing
+
+* [Catch](https://github.com/philsquared/Catch) - bundled
+
+#### Run
