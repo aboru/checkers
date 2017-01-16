@@ -16,7 +16,6 @@
 
 #include <cstdlib>
 #include <iostream>
-#include "board/board.hpp"
 
 int main( int argument_count, char** arguments ) {
     std::cout << "hello, checkers." << std::endl;
