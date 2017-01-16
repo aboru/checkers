@@ -1,6 +1,1 @@
 -Iinclude/
--lGL
--lGLU
--lGLEW
--lglfw
--lSOIL

@@ -19,9 +19,7 @@
 #include "board/board.hpp"
 
 int main( int argument_count, char** arguments ) {
-    board board;
-
-    std::cout << board.to_string() << std::endl;
+    std::cout << "hello, checkers." << std::endl;
 
     return EXIT_SUCCESS;
 }
