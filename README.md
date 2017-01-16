@@ -39,7 +39,7 @@ and changes would be needed to make them work.
 #### Build
 
 * G++ or Clang++ (for compilation)
-* CMake
+* CMake >= 3.6.1
 * make
 
 #### Testing
