@@ -62,6 +62,10 @@ root directory:
 To contribute to the project, please make a pull request and these will be
 evaluated on a case by case basis.
 
+### Changlog
+
+> 0.1.0
+
 ### Licensing
 
 Copyright 2016 Anders Borg [aboru]
