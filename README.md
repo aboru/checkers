@@ -14,3 +14,16 @@ The project goals are:
 * to write AI systems
 * to practice good coding standards
 * to keep a grasp of c++
+
+### Status
+
+> version - 0.1.0 : pre-alpha
+
+pending features:
+
+* game configuration
+* game setup
+* save game capabilities
+* player movement
+* win checks
+* game ending
