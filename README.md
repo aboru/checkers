@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/aboru/checkers.svg?branch=0.1.0)](https://travis-ci.org/aboru/checkers)
+
 # Checkers
 
 A game of checkers for two players for a linux desktop. This application will
