@@ -1,0 +1,13 @@
+# build configuration for our CI builds
+
+language: cpp
+
+compiler:
+    - clang
+    - gcc
+
+script:
+    - mkdir build
+    - cd build
+    - cmake .. && make
+    - ./checkers_test
