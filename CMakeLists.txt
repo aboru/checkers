@@ -18,7 +18,7 @@ project (checkers)
 
 # set (CMAKE_CXX_STANDARD 11)
 # set (CMAKE_CXX_STANDARD_REQUIRED ON)
-set (CMAKE_CXX_FLAGS "-std=c++14 -g -Wall -Wextra -m64")
+set (CMAKE_CXX_FLAGS "-g -Wall -Wextra -m64")
 
 set (CHECKERS_VERSION_MAJOR 0)
 set (CHECKERS_VERSION_MINOR 1)
