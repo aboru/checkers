@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/aboru/checkers.svg?branch=0.1.0)](https://travis-ci.org/aboru/checkers)
+[![Build Status](https://travis-ci.org/aboru/checkers.svg?branch=develop)](https://travis-ci.org/aboru/checkers)
 
 # Checkers
 
@@ -20,15 +20,6 @@ The project goals are:
 ### Status
 
 > version - 0.1.0 : pre-alpha
-
-pending features:
-
-* game configuration
-* game setup
-* save game capabilities
-* player movement
-* win checks
-* game ending
 
 ### Compatibility
 
@@ -67,6 +58,11 @@ evaluated on a case by case basis.
 ### Changlog
 
 > 0.1.0
+
+* players are represented with state
+* positions are represented with state
+* coordinates are used for access
+* the board initializes to default setup
 
 ### Licensing
 
