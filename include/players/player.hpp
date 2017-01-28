@@ -14,7 +14,27 @@
     limitations under the License.
 */
 
-#define VERSION_MAJOR 0
-#define VERSION_MINOR 1
-#define VERSION_PATCH 0
-#define VERSION       0.1.0
+#ifndef L_PLAYER_HPP
+#define L_PLAYER_HPP
+
+#include <string>
+
+namespace checkers {
+
+    class player {
+
+    public:
+        explicit player( int );
+
+        int id();
+        std::string name();
+        std::string to_string();
+
+    private:
+        int _id;
+
+    };
+
+}
+
+#endif

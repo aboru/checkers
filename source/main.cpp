@@ -14,7 +14,11 @@
     limitations under the License.
 */
 
-#define VERSION_MAJOR 0
-#define VERSION_MINOR 1
-#define VERSION_PATCH 0
-#define VERSION       0.1.0
+#include <cstdlib>
+#include <iostream>
+
+int main( int argument_count, char** arguments ) {
+    std::cout << "hello, checkers." << std::endl;
+
+    return EXIT_SUCCESS;
+}

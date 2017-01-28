@@ -14,7 +14,27 @@
     limitations under the License.
 */
 
-#define VERSION_MAJOR 0
-#define VERSION_MINOR 1
-#define VERSION_PATCH 0
-#define VERSION       0.1.0
+#ifndef L_BOARD_HPP
+#define L_BOARD_HPP
+
+#include <string>
+
+#include "board/position.hpp"
+
+namespace checkers {
+
+    class board {
+
+    public:
+        board();
+
+        std::string to_string();
+
+    private:
+        position state[8][8];
+
+    };
+
+}
+
+#endif

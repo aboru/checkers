@@ -14,7 +14,30 @@
     limitations under the License.
 */
 
-#define VERSION_MAJOR 0
-#define VERSION_MINOR 1
-#define VERSION_PATCH 0
-#define VERSION       0.1.0
+#include <string>
+
+#include "players/player.hpp"
+
+namespace checkers {
+
+    player::player( int p_id ) : _id( p_id ) {}
+
+    int player::id() {
+        return this->_id;
+    }
+
+    std::string player::name() {
+        if ( this->_id == 1 ) {
+            return "player one";
+        }
+        if ( this->_id == 2 ) {
+            return "player two";
+        }
+        return "undefined player";
+    }
+
+    std::string player::to_string() {
+        return this->name();
+    }
+
+}
