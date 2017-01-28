@@ -119,15 +119,14 @@ namespace checkers {
 
     std::string position::to_string() {
         std::ostringstream stream;
-        stream << "position: ";
-        stream << this->_coordinate.to_pretty_string();
+        int result = 0;
 
-        if ( this->has_owner() ) {
-            stream << " owner: ";
-            stream << this->_owner;
-            stream << " is king: ";
-            stream << this->_is_king;
-        }
+        if ( this->is_owner( 1 ) ) result  = 1;
+        if ( this->is_owner( 2 ) ) result  = 2;
+        if ( this->is_king() )     result += 2;
+
+        stream << " ";
+        stream << result;
 
         return stream.str();
     }
