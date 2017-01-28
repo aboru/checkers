@@ -117,6 +117,10 @@ namespace checkers {
         return this->_coordinate.x() == location.x() && this->_coordinate.y() == location.y();
     }
 
+    coordinate position::location() {
+        return this->_coordinate;
+    }
+
     std::string position::to_string() {
         std::ostringstream stream;
         int result = 0;
