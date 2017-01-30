@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/aboru/checkers.svg?branch=develop)](https://travis-ci.org/aboru/checkers)
+[![Build Status](https://travis-ci.org/aboru/checkers.svg?branch=0.2.0)](https://travis-ci.org/aboru/checkers)
 
 # Checkers
 
@@ -19,7 +19,7 @@ The project goals are:
 
 ### Status
 
-> version - 0.1.0 : pre-alpha
+> version - 0.2.0 : pre-alpha
 
 ### Compatibility
 
