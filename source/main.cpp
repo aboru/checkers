@@ -17,8 +17,10 @@
 #include <cstdlib>
 #include <iostream>
 
-int main( int argument_count, char** arguments ) {
-    std::cout << "hello, checkers." << std::endl;
+#include "board/board.hpp"
 
-    return EXIT_SUCCESS;
+int main(int argument_count, char **arguments) {
+    checkers::board board;
+
+    std::cout << board.to_string();
 }

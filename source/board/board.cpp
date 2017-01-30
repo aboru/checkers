@@ -14,8 +14,8 @@
     limitations under the License.
 */
 
-#include <string>
 #include <sstream>
+#include <string>
 
 #include "board/board.hpp"
 #include "board/position.hpp"
@@ -24,26 +24,29 @@
 namespace checkers {
 
     board::board() {
-        for ( int i = 0; i < 8; i++ ) {
-            for ( int j = 0; j < 8; j++ ) {
-                position slot( coordinate( i, j ) );
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                position slot(coordinate(i, j));
 
-                if ( slot.is_playable() ) {
-                    if ( slot.location().y() < 3 ) slot.owner( 1 );
-                    if ( slot.location().y() > 4 ) slot.owner( 2 );
+                if (slot.is_playable()) {
+                    if (slot.location().x() < 3)
+                        slot.owner(1);
+                    if (slot.location().x() > 4)
+                        slot.owner(2);
                 }
+
+                this->state[slot.location().y()][slot.location().x()] = slot;
             }
         }
     }
 
-
     std::string board::to_string() {
         std::ostringstream stream;
 
-        for ( int i = 0; i < 8; i++ ) {
-            for ( int j = 0; j < 8; j++ ) {
-                coordinate slot( i, j );
-                stream << this->state[slot.x()][slot.y()].to_string();
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                coordinate slot(i, j);
+                stream << this->state[slot.y()][slot.x()].to_string();
             }
             stream << "\n";
         }
