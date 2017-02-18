@@ -16,9 +16,25 @@
 
 #include <cstdlib>
 #include <iostream>
+#include <string>
 
-int main( int argument_count, char** arguments ) {
-    std::cout << "hello, checkers." << std::endl;
+#include "config.hpp"
+#include "board/board.hpp"
+
+int main(int argument_count, char **arguments) {
+    for (int i = 0; i < argument_count; i++) {
+        std::string argument = std::string(arguments[i]);
+
+        if (argument == "-v" || argument == "--version") {
+            std::cout << "aboru checkers" << std::endl;
+            std::cout << "version: @" << VERSION << std::endl;
+            return EXIT_SUCCESS;
+        }
+    }
+
+    checkers::board board;
+
+    std::cout << board.to_string();
 
     return EXIT_SUCCESS;
 }
