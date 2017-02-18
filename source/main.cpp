@@ -30,6 +30,12 @@ int main(int argument_count, char **arguments) {
             std::cout << "version: @" << VERSION << std::endl;
             return EXIT_SUCCESS;
         }
+
+        if (argument == "-h" || argument == "--help") {
+            std::cout << "view the documentation on the project site: ";
+            std::cout << "https://github.com/aboru/checkers" << std::endl;
+            return EXIT_SUCCESS;
+        }
     }
 
     checkers::board board;
