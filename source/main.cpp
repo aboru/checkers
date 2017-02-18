@@ -38,6 +38,12 @@ int main(int argument_count, char **arguments) {
         }
     }
 
+    std::cout << "aboru checkers" << std::endl;
+    std::cout << "uses american rules" << std::endl;
+    std::cout << "input and output is given in the command line ";
+    std::cout << "after you are prompted." << std::endl;
+    std::cout << "(1,1) is the top left corner" << std::endl;
+
     checkers::board board;
 
     std::cout << board.to_string();
