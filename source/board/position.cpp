@@ -117,6 +117,16 @@ namespace checkers {
         return this->_coordinate.x() == location.x() && this->_coordinate.y() == location.y();
     }
 
+    int position::value() {
+        int value = 0;
+
+        if ( this->is_owner( 1 ) ) value  = 1;
+        if ( this->is_owner( 2 ) ) value  = 2;
+        if ( this->is_king() )     value += 2;
+
+        return value;
+    }
+
     coordinate position::location() {
         return this->_coordinate;
     }

@@ -14,45 +14,35 @@
     limitations under the License.
 */
 
-#include <string>
-#include <sstream>
-
+#include "io/file-writer.hpp"
 #include "board/board.hpp"
-#include "board/position.hpp"
 #include "utilities/coordinate.hpp"
+
+#include <string>
+#include <iostream>
+#include <fstream>
 
 namespace checkers {
 
-    board::board() {
-        for ( int i = 0; i < 8; i++ ) {
-            for ( int j = 0; j < 8; j++ ) {
-                position slot( coordinate( i, j ) );
+    file_writer::file_writer() : _filename( "save.chk" ) {}
 
-                if ( slot.is_playable() ) {
-                    if ( slot.location().y() < 3 ) slot.owner( 1 );
-                    if ( slot.location().y() > 4 ) slot.owner( 2 );
-                }
-            }
-        }
-    }
+    file_writer::file_writer( std::string filename ) : _filename( filename ) {}
 
-    int board::value_at( coordinate coordinate ) {
-        return this->state[coordinate.x()][coordinate.y()].value();
-    }
+    void file_writer::write( board board ) {
+        std::ofstream file;
 
-
-    std::string board::to_string() {
-        std::ostringstream stream;
+        file.open( this->_filename.c_str() );
+        file << "version: 0.1.0" << std::endl;
 
         for ( int i = 0; i < 8; i++ ) {
             for ( int j = 0; j < 8; j++ ) {
                 coordinate slot( i, j );
-                stream << this->state[slot.x()][slot.y()].to_string();
+                file << board.value_at( slot );
             }
-            stream << "\n";
+            file << std::endl;
         }
 
-        return stream.str();
+        file.close();
     }
 
 }

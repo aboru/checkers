@@ -52,6 +52,8 @@ namespace checkers {
         bool is_not_king();
         bool is_location( coordinate );
 
+        int value();
+
         coordinate location();
         std::string to_string();
 

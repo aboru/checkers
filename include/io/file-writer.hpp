@@ -14,27 +14,25 @@
     limitations under the License.
 */
 
-#ifndef L_BOARD_HPP
-#define L_BOARD_HPP
+#ifndef L_FILE_WRITER_HPP
+#define L_FILE_WRITER_HPP
+
+#include "board/board.hpp"
 
 #include <string>
 
-#include "board/position.hpp"
-#include "utilities/coordinate.hpp"
-
 namespace checkers {
 
-    class board {
+    class file_writer {
 
     public:
-        board();
+        file_writer();
+        file_writer( std::string );
 
-        int value_at( coordinate );
-
-        std::string to_string();
+        void write( board );
 
     private:
-        position state[8][8];
+        std::string _filename;
 
     };
 
